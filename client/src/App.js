@@ -2,10 +2,8 @@ import React from 'react'
 import { BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import Register from './component/authentication/Register'
-import GoogleAuthentication from './component/authentication/GoogleAuthentication'
 import Google from './component/authentication/Google'
-import Github from './component/authentication/Github'
-import Facebook from './component/authentication/Facebook'
+import Courses from './component/courses/Library'
 // import 'mdbreact/dist/css/mdb.css';
 // import  { MDBIcon }  from "mdbreact"
 class App extends React.Component {
@@ -36,7 +34,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
           <div>
-            <Navbar className="navbar navbar-expand-sm ml-auto"  color="faded" light >
+            <Navbar className="navbar navbar-expand-sm ml-auto" style={{backgroundColor: '#24292E'}}  color="faded" light >
             <NavItem className="nav"><Link to="/" className="nav-link" > CODE Platform </Link></NavItem>
               <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
@@ -60,7 +58,7 @@ class App extends React.Component {
             </Navbar>
             <Switch>
             <Route path="/register" component={Register} exact={true} />
-            <Route path="/google/signin" component={GoogleAuthentication} exact={true} />
+            <Route path="/courses" component={Courses} exact={true} />
             </Switch>
             <Modal className='modal-lg' isOpen={this.state.modal} toggle={this.toggle}>
               <ModalHeader toggle={this.toggle}>Sign In With</ModalHeader>
@@ -70,8 +68,6 @@ class App extends React.Component {
                 <div className='text-center'>
                   <div className='btn-group'>
                     <Google />
-                    <Facebook />
-                    <Github />
                   </div>
                 </div>
               </ModalBody>
