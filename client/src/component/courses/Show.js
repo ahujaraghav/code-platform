@@ -66,7 +66,6 @@ const CourseShow = (props) =>{
                     </div>
                 </div>
                 
-                <MDBCollapse isOpen='false'>
               <MDBMedia  className="m-3">
                 <MDBMedia left>
                     <i className="far fa-check-circle fa-1x m-2"></i>
@@ -123,7 +122,6 @@ const CourseShow = (props) =>{
                     <MDBMedia heading>Reading Material</MDBMedia>
                 </MDBMedia>
               </MDBMedia>
-              </MDBCollapse>
 
             </MDBMedia>
           </MDBMedia>
