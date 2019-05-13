@@ -45,7 +45,7 @@ const CourseShow = (props) =>{
                 <div className="d-flex flex-row flex-fill">
                     <MDBBtn className="mr-2"><h6> 20 steps <i className="fas fa-angle-double-down"></i></h6></MDBBtn>
                     <div style={{width:'10rem'}} className="my-auto">
-                        <MDBProgress value={100} >100</MDBProgress>
+                        <MDBProgress value={100} color="greenHighlight">100</MDBProgress>
                     </div>
                 </div>
                 </MDBMedia>
@@ -62,7 +62,7 @@ const CourseShow = (props) =>{
                 <div className="d-flex flex-row flex-fill">
                     <MDBBtn className="mr-2"><h6> 12 steps <i className="fas fa-angle-double-down"></i></h6></MDBBtn>
                     <div style={{width:'10rem'}} className="my-auto">
-                        <MDBProgress color='danger' value={50} >50</MDBProgress>
+                        <MDBProgress color='greenHighlight' value={50} >50</MDBProgress>
                     </div>
                 </div>
                 

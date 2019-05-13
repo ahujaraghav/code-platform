@@ -36,20 +36,24 @@ body {
   color: var(--white) !important;
 }
 
+.bg-greenHighlight {
+  background-color: var(--greenHighlight) !important;
+}
+
 /* .bg-blueCard {
-  background-color: var(--blueCard);
+  background-color: var(--blueCard) !important;
 }
 
 .bg-pinkCard {
-  background-color: var(--pinkCard);
+  background-color: var(--pinkCard) !important;
 }
 .bg-violetCard {
-  background-color: var(--violetCard);
+  background-color: var(--violetCard) !important;
 }
 .bg-brownCard {
-  background-color: var(--brownCard);
+  background-color: var(--brownCard) !important;
 }
 .bg-greyCard {
-  background-color: var(--greyCard);
+  background-color: var(--greyCard) !important;
 } */
 
