@@ -6,7 +6,10 @@
   "scripts": {
     "client_install": "cd client && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\" "
+    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\" ",
+    "predeploy": "npm run build",
+ "deploy": "gh-pages -d build",
+}
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
+    "gh-pages": "^2.0.1",
+    "homepage": "https://ahujaraghav.github.io/code-platform/",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.16",
     "nodemon": "^1.19.0",
