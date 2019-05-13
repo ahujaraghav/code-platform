@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBIcon, MDBCard, MDBCardBody, MDBCardText, MDBCardHeader, MDBBtn, MDBRow} from "mdbreact"
+import { MDBIcon, MDBCard, MDBCardFooter, MDBCardBody, MDBCardText, MDBCardHeader, MDBBtn, MDBRow} from "mdbreact"
 const Library = (props) => {
     return (
         <div className="container">
@@ -21,13 +21,15 @@ const Library = (props) => {
                         <MDBCardText>
                         Refactor an existing authentication project by using cookies and JSON Web Token to increase security. Cookies are a way for a browser to store information while tokens are a stand-in ...
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4" small muted>
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>3 hours</MDBCardText>
-                            <MDBBtn className="float-right" color="dark">Start</MDBBtn>
+                            <MDBBtn className="float-right" color="dark" onClick={()=>{
+                                props.history.push('/course/1')
+                            }}>Start</MDBBtn>
                         </div>
                         </footer>
-                    </MDBCardBody>
                 </MDBCard>
 
                 <MDBCard style={{ width: "22rem", margin: ".25rem" }}>
@@ -38,13 +40,13 @@ const Library = (props) => {
                         <MDBCardText>
                         ECMAScript 6 is also known as ES6 and ECMAScript 2015. Some people call it JavaScript 6. This chapter will introduce some of the new features in ES6.
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4">
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>100 min left</MDBCardText>
                             <MDBBtn className="float-right" color="dark">Resume</MDBBtn>
                         </div>
                         </footer>
-                    </MDBCardBody>
                 </MDBCard>
 
                 <MDBCard style={{ width: "22rem", margin: ".25rem" }}>
@@ -55,13 +57,13 @@ const Library = (props) => {
                         <MDBCardText>
                            Refactor an existing authentication project by using cookies and JSON Web Token to increase security. 
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4">
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>Completed</MDBCardText>
-                            <MDBBtn className="float-right"><i class="fas fa-check-circle fa-2x"></i></MDBBtn>
+                            <MDBBtn className="float-right"><i className="fas fa-check-circle fa-2x"></i></MDBBtn>
                         </div>
                         </footer>
-                    </MDBCardBody>
                 </MDBCard>
 
                 <MDBCard style={{ width: "22rem", margin: ".25rem" }}>
@@ -72,13 +74,13 @@ const Library = (props) => {
                         <MDBCardText>
                         Refactor an existing authentication project by using cookies and JSON Web Token to increase security. Cookies are a way for a browser to store information while tokens are a stand-in ...
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4">
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>3 hours</MDBCardText>
                             <MDBBtn className="float-right" color="dark">Start</MDBBtn>
                         </div>
                         </footer>
-                    </MDBCardBody>
                 </MDBCard>
                 <MDBCard style={{ width: "22rem", margin: ".25rem" }}>
                     <MDBCardHeader color="primary-color" tag="h4">
@@ -88,13 +90,13 @@ const Library = (props) => {
                         <MDBCardText>
                         Refactor an existing authentication project by using cookies and JSON Web Token to increase security. Cookies are a way for a browser to store information while tokens are a stand-in ...
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4">
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>3 hours</MDBCardText>
                             <MDBBtn className="float-right" color="dark">Start</MDBBtn>
                         </div>
-                        </footer>
-                    </MDBCardBody>
+                    </footer>
                 </MDBCard>
                 <MDBCard style={{ width: "22rem", margin: ".25rem" }}>
                     <MDBCardHeader color="primary-color" tag="h4">
@@ -104,13 +106,13 @@ const Library = (props) => {
                         <MDBCardText>
                         Refactor an existing authentication project by using cookies and JSON Web Token to increase security. Cookies are a way for a browser to store information while tokens are a stand-in ...
                         </MDBCardText>
-                        <footer className="blockquote-footer">
+                    </MDBCardBody>
+                    <footer className="m-4">
                         <div className="flex-row">
                             <MDBCardText className="float-left" small muted>3 hours</MDBCardText>
                             <MDBBtn className="float-right" color="dark">Start</MDBBtn>
                         </div>
-                        </footer>
-                    </MDBCardBody>
+                    </footer>
                 </MDBCard>
 
             </MDBRow>

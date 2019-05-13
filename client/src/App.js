@@ -4,6 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Collapse, Navbar, N
 import Register from './component/authentication/Register'
 import Google from './component/authentication/Google'
 import Courses from './component/courses/Library'
+import Course from './component/courses/Show'
 // import 'mdbreact/dist/css/mdb.css';
 // import  { MDBIcon }  from "mdbreact"
 class App extends React.Component {
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Switch>
             <Route path="/register" component={Register} exact={true} />
             <Route path="/courses" component={Courses} exact={true} />
+            <Route path="/course/:id" component={Course} exact={true} />
             </Switch>
             <Modal className='modal-lg' isOpen={this.state.modal} toggle={this.toggle}>
               <ModalHeader toggle={this.toggle}>Sign In With</ModalHeader>
