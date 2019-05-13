@@ -35,12 +35,12 @@ class Header extends React.Component {
                     style={{ backgroundColor: '#23282E' }}
                     fixed="top" dark>
                     <MDBNavItem 
-                    className="nav">
+                    className="nav logo-seprater">
                     <Link to="/"
                      className="nav-link" 
-                     style={{color:"var(--white)"}}
-                     > 
-                     <span style={{color:"var(--greenHighlight)", "font-weight":"bold", "font-size":"1.3rem"}}>C</span>ode Platform </Link></MDBNavItem>
+                     style={{color:"var(--white)"}}> 
+                     <span style={{color:"var(--greenHighlight)", "font-weight":"bold", "font-size":"1.3rem"}}>D</span>ct Learn.</Link>
+                     </MDBNavItem>
                     <MDBNavbarToggler
                         onClick={this.toggleNavbar}
                         className="mr-2" />

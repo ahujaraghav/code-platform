@@ -57,3 +57,11 @@ body {
   background-color: var(--greyCard) !important;
 } */
 
+/* Media Queries */
+@media (min-width: 1000px){
+  .logo-seprater{
+    border-right: 5px solid #474747;
+     margin-right: 20px;
+     }
+}
+
