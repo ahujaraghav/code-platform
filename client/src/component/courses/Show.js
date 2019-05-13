@@ -2,8 +2,8 @@ import React from 'react'
 import { MDBJumbotron, MDBCollapse, MDBCardText, MDBCardBody, MDBCardTitle, MDBRow, MDBCol, MDBMedia, MDBBtn, MDBProgress } from "mdbreact"
 const CourseShow = (props) =>{
     return(
-        <div>
-            <MDBJumbotron>
+        <div className="container-fluid">
+            <MDBJumbotron style={{background:"var(--blueCard)", color: "white"}}>
                 <MDBCardBody>
                 <MDBCardTitle className="h1 text-center">
                     Basic javascript

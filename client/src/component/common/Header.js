@@ -38,8 +38,9 @@ class Header extends React.Component {
                     className="nav">
                     <Link to="/"
                      className="nav-link" 
-                     style={{color:"var(--greenHighlight)", "font-weight":"bold", "font-size":"1.3rem"}}
-                     > Code Platform </Link></MDBNavItem>
+                     style={{color:"var(--white)"}}
+                     > 
+                     <span style={{color:"var(--greenHighlight)", "font-weight":"bold", "font-size":"1.3rem"}}>C</span>ode Platform </Link></MDBNavItem>
                     <MDBNavbarToggler
                         onClick={this.toggleNavbar}
                         className="mr-2" />
