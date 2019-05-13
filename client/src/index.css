@@ -1,3 +1,55 @@
-.bg-whitesmoke {
-  background-color:whitesmoke
+:root {
+   --blueCard: #226597;
+   --pinkCard: #9F4B84;
+   --brownCard: #5a3921;
+   --purpleCard: #2b2688;
+   --redCard: #a21639;
+   --orangeCard: #df7844;
+   --white: white;
+   --dimWhite: rgb(188, 195, 199);
+   --greenHighlight: #5fcf80;
 }
+
+body {
+  font-family: 'Nunito',Arial, Helvetica, sans-serif !important;
+}
+
+.bg-whitesmoke {
+  background-color:whitesmoke;
+}
+
+.link-dimwhite-bold a{
+  color: var(--dimWhite);
+  font-weight: bold;
+}
+
+.btn-custom-outline {
+  color: var(--white) !important;
+  border: 1px solid var(--white) !important;
+}
+
+.btn-custom-outline:hover{
+  color: var(--dimWhite) !important;
+}
+
+.selected {
+  color: var(--white) !important;
+}
+
+/* .bg-blueCard {
+  background-color: var(--blueCard);
+}
+
+.bg-pinkCard {
+  background-color: var(--pinkCard);
+}
+.bg-violetCard {
+  background-color: var(--violetCard);
+}
+.bg-brownCard {
+  background-color: var(--brownCard);
+}
+.bg-greyCard {
+  background-color: var(--greyCard);
+} */
+
