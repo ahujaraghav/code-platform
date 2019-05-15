@@ -3,37 +3,34 @@ const validator = require('validator')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Schema = mongoose.Schema
+const roles = require('../config/roles')
+
 //for custom validation 
 const userSchema = new Schema({
     firstName: {
         type: String,
-        required:true,
-        unique: true,
-        minlength:5
+        required:true
     },
     lastName: {
         type: String,
-        required:true,
-        unique: true,
-        minlength:5
+        required:true
     },
-    username: {
-        type: String,
-        required:true,
-        unique: true,
-        minlength:5
-    },
+    // username: {
+    //     type: String,
+    //     required:true,
+    //     unique: true,
+    //     minlength:5
+    // },
     email: {
         type: String,
         required: true,
         unique: true,
-        //how to check the format of the email
         validate: {
             validator: function(value){
                 return validator.isEmail(value)
             },
             message: function(){
-                return 'invalid email format'
+                return 'Invalid Email'
             }
         }
 
@@ -41,7 +38,7 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true,
-        minlength: 6,
+        minlength: 5,
         maxlength: 128
     },
     socialLinks:[
@@ -49,8 +46,10 @@ const userSchema = new Schema({
             type:String
         }
     ],
-    role:{
-        type:String
+    role:{ type:String, default: roles.STUDENT},
+    college: {
+        type: Schema.Types.ObjectId,
+        ref: 'College'
     },
     tokens: [
         {
@@ -62,10 +61,15 @@ const userSchema = new Schema({
                 default: Date.now
             }
         }
-    ]
+    ],
+    accountActive: {
+        type: Boolean,
+        default: false
+    }
 })
-userSchema.pre('validate',function(next){
-    const user = this//refers to user object of save method
+
+userSchema.pre('save',function(next){
+    const user = this
     if(user.isNew){
         bcryptjs.genSalt(10)
             .then(function(salt){
@@ -79,14 +83,20 @@ userSchema.pre('validate',function(next){
         next()
     }
 })
+
 //own instance method
 userSchema.methods.generateToken = function(){
     const user = this
+    const date = Number(new Date())
+
     const tokenData = {
         _id: user._id,
-        username: user.username,
-        createdAt: Number(new Date())
+        email: user.email,
+        // 7 days token expiry
+        expiry: date + (7 * 86400000),
+        createdAt: date
     }
+    console.log(tokenData)
     const token = jwt.sign(tokenData,'jwt@123')
     user.tokens.push({
         token 
@@ -120,37 +130,38 @@ userSchema.statics.findByCredentials = function(email,password){
                     return Promise.reject(err)
                 })
 }
-userSchema.statics.findByCredentialsAndCompare = function(id,oldPassword,newPassword){
-    const User = this
-    return User.findById(id)
-                .then(function(user){
-                    console.log(oldPassword,user.password)
-                    return bcryptjs.compare(oldPassword, user.password)
-                        .then(function(result){
-                            if(result){
-                                user.isNew=true
-                                User.findByIdAndUpdate(user._id,{$set:{password:newPassword}},{new: true, runValidators:true})
-                                    .then(function(user){
-                                        console.log(user)
-                                        res.send(user)
-                                    })
-                                    .catch(function(err){
-                                        res.send({err:"password update err"}) 
-                                    })
-                                    return Promise.resolve(user)
-                            }
-                            else{
-                                return Promise.reject({err:"password doesnot match"})
-                            }
-                        })
-                        .catch(function(err){
-                            return Promise.resolve(err)
-                        })
-                    })
-                .catch(function(err){
-                    return Promise.reject({err:"user not found"})
-                })
-}
+// userSchema.statics.findByCredentialsAndCompare = function(id,oldPassword,newPassword){
+//     const User = this
+//     return User.findById(id)
+//                 .then(function(user){
+//                     console.log(oldPassword, user.password)
+//                     return bcryptjs.compare(oldPassword, user.password)
+//                         .then(function(result){
+//                             if(result){
+//                                 user.isNew=true
+//                                 User.findByIdAndUpdate(user._id,{$set:{password:newPassword}},{new: true, runValidators:true})
+//                                     .then(function(user){
+//                                         console.log(user)
+//                                         res.send(user)
+//                                     })
+//                                     .catch(function(err){
+//                                         res.send({err:"password update err"}) 
+//                                     })
+//                                     return Promise.resolve(user)
+//                             }
+//                             else{
+//                                 return Promise.reject({err:"password doesnot match"})
+//                             }
+//                         })
+//                         .catch(function(err){
+//                             return Promise.resolve(err)
+//                         })
+//                     })
+//                 .catch(function(err){
+//                     return Promise.reject({err:"user not found"})
+//                 })
+// }
+
 userSchema.statics.findByToken = function(token){
     const User = this
     let tokenData
@@ -166,6 +177,7 @@ userSchema.statics.findByToken = function(token){
     })
 }
 const User = mongoose.model('User',userSchema)
+
 module.exports ={
     User
 }
