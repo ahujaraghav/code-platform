@@ -5,7 +5,7 @@ const strictRoutes = {
   '/colleges': {
     GET: [roles.SUPER_ADMIN],
     POST: [roles.SUPER_ADMIN],
-    UPDATE: [roles.SUPER_ADMIN],
+    PUT: [roles.SUPER_ADMIN],
     DELETE: [roles.SUPER_ADMIN]
   }
 }
