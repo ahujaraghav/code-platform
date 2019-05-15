@@ -49,6 +49,9 @@ class Header extends React.Component {
                         navbar>
                         <MDBNav navbar className="navbar-nav mr-auto link-dimwhite-bold" >
                             <MDBNavItem>
+                                <NavLink to="/admin" activeClassName="selected" className="navlink mr-3" > Admin </NavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
                                 <NavLink to="/courses" activeClassName="selected" className="navlink mr-3" > Courses </NavLink>
                             </MDBNavItem>
                             <MDBNavItem>

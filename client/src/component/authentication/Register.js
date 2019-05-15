@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from '../../config/axios'
-import { Col, Row } from 'reactstrap'
+import { MDBCol, MDBRow } from 'mdbreact'
 class Register extends React.Component{
     constructor(props){
         super(props)
@@ -55,65 +55,65 @@ class Register extends React.Component{
         return (
             <div>
                     <form onSubmit={this.handleSubmit} className="form">
-                        <Row form>
-                            <Col md={6}>
+                        <MDBRow form>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > First Name:</span>
                                     </div>
                                     <input className="form-control" type="text" value={this.state.firstname} onChange={this.handleChange} placeholder="enter first name" name="firstname" required />
                                 </div>
-                            </Col>
+                            </MDBCol>
 
-                            <Col md={6}>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > Last Name:</span>
                                     </div>
                                     <input className="form-control" type="text" value={this.state.lastname} onChange={this.handleChange} placeholder="enter last name" name="lastname" required />
                                 </div>
-                            </Col>
-                        </Row>
+                            </MDBCol>
+                        </MDBRow>
 
-                        <Row form>
-                            <Col md={6}>
+                        <MDBRow form>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > Username:</span>
                                     </div>
                                     <input className="form-control" type="text" value={this.state.username} onChange={this.handleChange} placeholder="enter username" name="username" required />
                                 </div>
-                            </Col>
+                            </MDBCol>
                             
-                            <Col md={6}>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > Email:</span>
                                     </div>
                                     <input className="form-control" type="email" value={this.state.email} onChange={this.handleChange} placeholder="enter email id" name="email" required />
                                 </div>
-                            </Col>
-                        </Row>
+                            </MDBCol>
+                        </MDBRow>
                         
-                        <Row form>
-                            <Col md={6}>
+                        <MDBRow form>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > Password:</span>
                                     </div>
                                     <input className="form-control" type={this.state.type} value={this.state.password} onChange={this.handleChange} placeholder="enter password" name="password" required />
                                 </div>
-                            </Col>
+                            </MDBCol>
 
-                            <Col md={6}>
+                            <MDBCol md={6}>
                                 <div className="form-group input-group input-group-sm mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text" > Confirm Password:</span>
                                     </div>
                                     <input className="form-control" type={this.state.type} value={this.state.confirmPassword} onChange={this.handleChange} placeholder="confirm password" name="confirmPassword" required />
                                 </div>
-                            </Col>
-                        </Row>
+                            </MDBCol>
+                        </MDBRow>
 
                             <div className="form-group ">
                                 <input type='checkbox' onChange={this.handleChecked} className="checkbox m-2" />
