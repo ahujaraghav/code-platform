@@ -10,17 +10,9 @@ class Header extends React.Component {
         this.state = {
             isCollapsed: false,
             showLoginModal: false,
-            open: true,
             active: 'courses'
         }
     }
-    handleDrawerOpen = () => {
-        this.setState({ open: true });
-      };
-    
-    handleDrawerClose = () => {
-        this.setState({ open: false });
-      };
 
     toggleNavbar = (e) => {
         this.setState((prevState) => ({ isCollapsed: !prevState.isCollapsed }))
@@ -39,7 +31,7 @@ class Header extends React.Component {
         return (
             <React.Fragment>
                 <MDBNavbar
-                    className="navbar navbar-expand-sm ml-auto"
+                    className="navbar navbar-expand-sm"
                     style={{ backgroundColor: '#23282E' }}
                     fixed="top" dark>
                     <MDBNavItem 
@@ -55,7 +47,7 @@ class Header extends React.Component {
                     <MDBCollapse
                         isOpen={this.state.isCollapsed}
                         navbar>
-                        <MDBNav navbar className="navbar-nav mr-auto link-dimwhite-bold" >
+                        <MDBNav navbar className="navbar-nav mr-auto link-dimwhite-bold " >
                             <MDBNavItem>
                                 <NavLink to="/courses" activeClassName="selected" className="navlink mr-3" > Courses </NavLink>
                             </MDBNavItem>
