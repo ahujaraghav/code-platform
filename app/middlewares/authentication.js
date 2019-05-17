@@ -7,6 +7,10 @@ const strictRoutes = {
     POST: [roles.SUPER_ADMIN],
     PUT: [roles.SUPER_ADMIN],
     DELETE: [roles.SUPER_ADMIN]
+  },
+  '/departments': {
+    POST: [roles.SUPER_ADMIN],
+    GET: [roles.SUPER_ADMIN]
   }
 }
 
