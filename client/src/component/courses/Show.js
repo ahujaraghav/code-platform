@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBJumbotron, MDBCollapse, MDBCardText, MDBCardBody, MDBCardTitle, MDBRow, MDBCol, MDBMedia, MDBBtn, MDBProgress } from "mdbreact"
+import { MDBJumbotron, MDBCardText, MDBCardBody, MDBCardTitle, MDBRow, MDBCol, MDBMedia, MDBBtn, MDBProgress } from "mdbreact"
 const CourseShow = (props) =>{
     return(
         <div className="container-fluid">

@@ -6,11 +6,13 @@
   "scripts": {
     "client_install": "cd client && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\" ",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-      },
+    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\" "
+  },
   "author": "",
+  "engines": {
+    "node": "^10.11.1",
+    "npm": "^6.8.0"
+  },
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,10 +22,11 @@
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "gh-pages": "^2.0.1",
-    "homepage": "https://ahujaraghav.github.io/code-platform",
     "jsonwebtoken": "^8.5.0",
+    "lodash": "^4.17.11",
     "mongoose": "^5.4.16",
     "nodemon": "^1.19.0",
+    "shorthash": "0.0.2",
     "validator": "^10.11.0"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBIcon, MDBCard, MDBCardFooter, MDBCardBody, MDBCardText, MDBCardHeader, MDBBtn, MDBRow } from "mdbreact"
+import { MDBIcon, MDBCard, MDBCardBody, MDBCardText, MDBCardHeader, MDBBtn, MDBRow } from "mdbreact"
 const Library = (props) => {
     const cardStyle = {
         width: "22rem",
