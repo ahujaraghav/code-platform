@@ -2,8 +2,8 @@ import React from 'react'
 import CollegeForm from './CollegeForm'
 const CollegeNew =(props)=>{
     return (
-        <div className="container">
-            <CollegeForm />
+        <div className="container" style={{marginLeft:'160px'}}>
+            <CollegeForm className="marginLeft" />
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
 import { MDBCollapse, MDBNavbar, MDBNavbarToggler, MDBNav, MDBNavItem, MDBBtn } from 'mdbreact'
 import LoginModal from '../common/Login'
-
 class Header extends React.Component {
 
     constructor(props) {
@@ -10,9 +10,17 @@ class Header extends React.Component {
         this.state = {
             isCollapsed: false,
             showLoginModal: false,
+            open: true,
             active: 'courses'
         }
     }
+    handleDrawerOpen = () => {
+        this.setState({ open: true });
+      };
+    
+    handleDrawerClose = () => {
+        this.setState({ open: false });
+      };
 
     toggleNavbar = (e) => {
         this.setState((prevState) => ({ isCollapsed: !prevState.isCollapsed }))
@@ -27,9 +35,9 @@ class Header extends React.Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <React.Fragment>
-
                 <MDBNavbar
                     className="navbar navbar-expand-sm ml-auto"
                     style={{ backgroundColor: '#23282E' }}
@@ -39,7 +47,7 @@ class Header extends React.Component {
                     <Link to="/"
                      className="nav-link" 
                      style={{color:"var(--white)"}}> 
-                     <span style={{color:"var(--greenHighlight)", "font-weight":"bold", "font-size":"1.3rem"}}>D</span>ct Learn.</Link>
+                     <span style={{color:"var(--greenHighlight)", "fontWeight":"bold", "fontSize":"1.3rem"}}>D</span>ct Learn.</Link>
                      </MDBNavItem>
                     <MDBNavbarToggler
                         onClick={this.toggleNavbar}
@@ -49,9 +57,6 @@ class Header extends React.Component {
                         navbar>
                         <MDBNav navbar className="navbar-nav mr-auto link-dimwhite-bold" >
                             <MDBNavItem>
-                                <NavLink to="/admin" activeClassName="selected" className="navlink mr-3" > Admin </NavLink>
-                            </MDBNavItem>
-                            <MDBNavItem>
                                 <NavLink to="/courses" activeClassName="selected" className="navlink mr-3" > Courses </NavLink>
                             </MDBNavItem>
                             <MDBNavItem>
@@ -59,6 +64,9 @@ class Header extends React.Component {
                             </MDBNavItem>
                             <MDBNavItem>
                                 <NavLink to="/forum"  activeClassName="selected" className="navlink mr-3" > Forum </NavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <NavLink to="/admin" activeClassName="selected" className="navlink mr-3" > Admin </NavLink>
                             </MDBNavItem>
                         </MDBNav>
                         <MDBNav navbar className="rightNav mr-1">
@@ -73,7 +81,6 @@ class Header extends React.Component {
                         </MDBNav>
                     </MDBCollapse>
                 </MDBNavbar>
-
                 <LoginModal
                     isOpen={this.state.showLoginModal}
                     toggle={this.toggleLoginModal} />
@@ -81,6 +88,4 @@ class Header extends React.Component {
         )
     }
 }
-
-
-export default Header
+  export default withStyles() (Header)

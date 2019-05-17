@@ -1,26 +1,20 @@
-import React, { Component } from "react";
-import './sidebar.css'
-import { NavLink } from 'react-router-dom'
-import { MDBNavItem, MDBNavbar} from 'mdbreact'
-
-
-const AdminDashboard = (props) =>{
+import React from 'react'
+import {Drawer,Divider, List, CssBaseline,IconButton  } from '@material-ui/core'
+import{ Menu as MenuIcon,ChevronLeft as ChevronLeftIcon} from '@material-ui/icons';
+import Sidebar from './Sidebar'
+const Admin =(props) =>{
     return (
-        <div>
-            <MDBNavbar>
-                <div className="sidenav mt-5">
-                    <MDBNavItem>
-                        <NavLink to="/admin/colleges" activeClassName="selected" className="navlink" > Colleges </NavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                        <NavLink to="/admin/contributers" activeClassName="selected" className="navlink" > Contributer </NavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                        <NavLink to="/admin/students" activeClassName="selected" className="navlink" > Student </NavLink>
-                    </MDBNavItem>
-                </div>
-            </MDBNavbar>
+        <div className="root" >
+                    <CssBaseline />
+                    <Drawer
+                    variant="permanent"
+                    open={this.state.open}>
+                    <div className='toolbarIcon'>
+                    </div>
+                    <Divider />
+                    <List><Sidebar /></List>
+                    </Drawer>
         </div>
     )
 }
-export default AdminDashboard
+export default Admin

@@ -1,0 +1,21 @@
+.root {
+    display: 'flex';
+  }
+.toolbar {
+    padding-right: 24; 
+  }
+.toolbarIcon{
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'flex-end';
+    padding: '0 8px';
+    margin-top: 60
+  }
+.drawerPaper{
+    position: 'fixed';
+    white-space: 'nowrap';
+    width: 240
+  }
+.drawerPaperClose {
+    overflow-x : 'hidden'
+  }
